@@ -57,3 +57,76 @@ listen to this url to get realtime big trade notification
 	2 ==> exchange cold wallet address
 }
 ```
+
+
+**method: [WEB GET] https://open.chain.info/v1/entity/bigTrade**
+```
+params:
+			name=entity name, like "Huobi" and "Binance"
+			date=query date, like "20191001", which can be ignore and will use current date
+```
+
+```
+{
+  "data": [
+    {
+      "date": str, // UTC time is timestamp
+      "inputAddress": str, // transaction input side address
+      "inputAddressType": str, // transaction input side address type, which follow by 'address type' in data
+      "inputEntity": str, // which address belong to, like "Huobi"
+      "outputAddress": str, // same as input side
+      "outputAddressType":  str, // same as input side
+      "outputEntity":  str, // same as input side
+      "timestamp": int, // the transaction happended in this timestamp
+      "txid": str, // transaction id
+      "type": str, // transaction type which followed by 'type' in data
+      "url": str, // the web site of the tx in chain.info
+      "value": -200 // the BTC value of the transaction if the entity on input side the value will be negative
+    }
+  ]
+  "success": true
+}
+```
+
+**method: [WEB GET] https://open.chain.info/v1/entity/list**
+
+
+```
+{
+  
+  "data": {
+    "blockHeight": int, // update at this block height
+    "date": int, // update at this time
+    "entityList": [
+      {
+        "addressCount": int , // the number of address in this entity at this height
+        "balance": float(2), // the amount of BTC balance in this entity at this height
+        "bigTotalExpense": float(2), // the amount of BTC in big trade output side in this entity during the last day
+        "bigTotalIncome": float(2), // the amount of BTC in big trade intput side in this entity during the last day
+        "bigTotalNum": int ,// the num of big trade in this entity during the last day
+        "coldBalance": float(2), // the amount of BTC balance in this entity cold wallet at this height
+        "coldBalancePercent": float(6),// the percent between cold balance and total balance
+        "coldNum": int, // the number of cold wallet address
+        "coldNumPercent": float(6),// the percent between cold address number and total address number
+        "hotBalance": float(2), // the amount of BTC balance in this entity hot wallet at this height
+        "hotBalancePercent": float(6),// the percent between cold balance and total balance
+        "hotNum": int, // the number of hot wallet address
+        "hotNumPercent": float(6),// the percent between hot address number and total address number
+        "name": str, // entity name,like "Huibo"
+        "netIncome": float(2), // the difference of BTC balance in this entity at this height and last day height
+        "percentBalance": float(6), //  rate of balance change
+        "percentNetIncome": float(6), //  rate of net income change
+        "percentTotalExpense": float(6), //  rate of total expense change
+        "percentTotalIncome": float(6), //  rate of total income change
+        "rank": int , // the rank of the entity in the list, the list order will follow rank 
+        "rechargeBalance": float(2), // the amount of BTC balance in this entity deposit wallet at this height
+        "rechargeBalancePercent": float(6),// the percent between deposit balance and total balance
+        "rechargeNum": int, // the number of hot wallet address
+        "rechargeNumPercent": float(6),// the percent between deposit address number and total address number
+        "totalExpense": float(2), // the amount of BTC total output in this entity at this height
+        "totalIncome": float(2), // the amount of BTC total input in this entity at this height
+      },
+  ]
+  "success": true
+}
+```
