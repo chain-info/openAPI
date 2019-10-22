@@ -109,7 +109,7 @@ params:
         "coldNum": int, // the number of cold wallet address
         "coldNumPercent": float(6),// the percent between cold address number and total address number
         "hotBalance": float(2), // the amount of BTC balance in this entity hot wallet at this height
-        "hotBalancePercent": float(6),// the percent between cold balance and total balance
+        "hotBalancePercent": float(6),// the percent between hot balance and total balance
         "hotNum": int, // the number of hot wallet address
         "hotNumPercent": float(6),// the percent between hot address number and total address number
         "name": str, // entity name,like "Huibo"
@@ -121,7 +121,7 @@ params:
         "rank": int , // the rank of the entity in the list, the list order will follow rank 
         "rechargeBalance": float(2), // the amount of BTC balance in this entity deposit wallet at this height
         "rechargeBalancePercent": float(6),// the percent between deposit balance and total balance
-        "rechargeNum": int, // the number of hot wallet address
+        "rechargeNum": int, // the number of deposit wallet address
         "rechargeNumPercent": float(6),// the percent between deposit address number and total address number
         "totalExpense": float(2), // the amount of BTC total output in this entity at this height
         "totalIncome": float(2), // the amount of BTC total input in this entity at this height
