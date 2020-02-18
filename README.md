@@ -9,7 +9,7 @@ listen to this url to get realtime big trade notification
 **method: socket.io**
 
 
-*event: newnotification*
+*event: newNotification*
 
 *data:*
 
